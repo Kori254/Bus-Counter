@@ -4,7 +4,7 @@ from ultralytics import YOLO
 from tracker import *
 import numpy as np
 
-model = YOLO('yolov8n.pt')
+model = YOLO('yolov8n_ncnn_model')
 
 # Define the areas
 area1 = np.array([(160,1), (342, 1), (338, 357), (142,355)], np.int32)
@@ -19,7 +19,7 @@ people_entering_area1 = set()  # Set of people who entered area1
 people_entering_area2 = set()  # Set of people who entered area2
 
 # Open video capture
-cap = cv2.VideoCapture('test.mp4')
+cap = cv2.VideoCapture('/home/kori/Desktop/Projects/raspberry_pi/Count people/peopleentering.webm')
 
 # Load COCO class names
 with open("coco.txt", "r") as my_file:
